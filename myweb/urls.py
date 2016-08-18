@@ -35,7 +35,7 @@ handler500 = 'core.views.get_500_page'
 
 urlpatterns = patterns(
     '',
-    # url(r'^ckeditor/', include('ckeditor.urls')),
+    url(r'^ckeditor/', include('ckeditor.urls')),
 
     url(r'^$', TemplateView.as_view(template_name='index.html'), name='index'),
 
@@ -47,7 +47,6 @@ urlpatterns = patterns(
     url(r'^blog/(\d+)/$', Detail.as_view(), name='blog_detail'),
     url(r'^blog/(\d+)/comment/$', Comment.as_view(), name='blog_comment'),
     url(r'^blog/rss/$', LatestBlogs(), name='blog_rss'),
-
     url(r'^discovery/$', Discovery.as_view(), name='discovery'),
     url(r'^feedback/$', Feedback.as_view(), name='feedback'),
 
